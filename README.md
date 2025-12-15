@@ -45,3 +45,16 @@ sudo apt install openjdk-11-jdk
 2. Navigate to: Manage Jenkins → Nodes → New Node
 3. Add a new node with the required configuration and save it.
 
+#### 3. Connect the Node to Jenkins
+Run the following commands on the agent node:
+```bash
+curl -sO http://<JENKINS_URL>/jnlpJars/agent.jar
+```
+
+```bash
+java -jar agent.jar \
+-jnlpUrl http://<JENKINS_URL>/computer/<NODE_NAME>/jenkins-agent.jnlp \
+-secret <SECRET> \
+-workDir "/home/ubuntu/jenkins"
+```
+
