@@ -31,8 +31,15 @@ Ensure the following are available before starting:
 
 ### Step 1: Connect VM Node to Jenkins
 
-#### Install Java on Agent Node (if not installed)
+#### 1. Install Java (if not already installed)
 
 ```bash
 sudo apt update
 sudo apt install openjdk-11-jdk
+```
+
+#### 2. Set Up Jenkins Node
+
+Open the Jenkins Dashboard
+
+Navigate to:
