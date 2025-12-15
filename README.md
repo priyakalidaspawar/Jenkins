@@ -57,4 +57,99 @@ java -jar agent.jar \
 -secret <SECRET> \
 -workDir "/home/ubuntu/jenkins"
 ```
+Replace <JENKINS_URL>, <NODE_NAME>, and <SECRET> with your Jenkins-specific values.
+
+###  Step 2: Create and Configure the Pipeline
+
+1. Open Jenkins Dashboard
+2. Click New Item
+3. Select Pipeline
+4. Enter a name and click OK
+5. In the pipeline configuration:
+- Select Pipeline script
+- Paste the following pipeline code
+## Jenkins Declarative Pipeline Script
+
+```bash
+pipeline {
+    agent {
+        node {
+            label 'linuxnode'
+        }
+    }
+
+    environment {
+        IMAGE_TAG = 'latest'
+        IMAGE_NAME = 'demo'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scmGit(
+                    branches: [[name: '*/main']],
+                    extensions: [],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/priyakalidaspawar/Jenkins.git'
+                    ]]
+                )
+            }
+        }
+
+        stage('Quality Gate') {
+            steps {
+                script {
+                    def pylintThreshold = 3
+                    def pylintCommand = """
+                        /usr/bin/python3 -m pylint \
+                        --fail-under=${pylintThreshold} \
+                        "/home/kube/jenkins/workspace/demo/src/app.py"
+                    """
+                    sh pylintCommand
+
+                    def pylintExitCode = sh(
+                        script: 'echo $?',
+                        returnStatus: true
+                    )
+
+                    if (pylintExitCode == 0) {
+                        echo "Linting Success"
+                    } else {
+                        echo "Linting failed"
+                    }
+                }
+            }
+        }
+
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    dir('src') {
+                        docker.build(
+                            "${IMAGE_NAME}:${IMAGE_TAG}",
+                            "-f Dockerfile ."
+                        )
+                    }
+                }
+            }
+        }
+
+        stage('Deploy Container') {
+            steps {
+                script {
+                    docker.image(
+                        "${IMAGE_NAME}:${IMAGE_TAG}"
+                    ).run('-d -p 5000:5000')
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            cleanWs()
+        }
+    }
+}
+```
 
