@@ -40,6 +40,8 @@ sudo apt install openjdk-11-jdk
 
 #### 2. Set Up Jenkins Node
 
-Open the Jenkins Dashboard
+1. Open the Jenkins Dashboard
 
-Navigate to:
+2. Navigate to: Manage Jenkins → Nodes → New Node
+3. Add a new node with the required configuration and save it.
+
