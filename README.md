@@ -152,4 +152,14 @@ pipeline {
     }
 }
 ```
+### Step 3: Verify Docker Images and Containers
+
+1. Verify Docker Image
+
+   ```bash
+   docker images
+```
+   Ensure the following image is available: ``` bash
+demo:latest
+```
 
