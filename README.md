@@ -163,4 +163,17 @@ Ensure the following image is available:
 ``` bash
 demo:latest
 ```
+2. Verify Running Container
+```bash
+docker ps
+```
+
+### Step 4: Access the Application
+
+1. Open a web browser
+2. Navigate to:
+```bash
+http://<AGENT_NODE_IP>:5000
+```
+If the application loads successfully, the deployment is complete.
 
