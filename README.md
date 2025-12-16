@@ -156,10 +156,11 @@ pipeline {
 
 1. Verify Docker Image
 
-   ```bash
+```bash
    docker images
 ```
-   Ensure the following image is available: ``` bash
+Ensure the following image is available: 
+``` bash
 demo:latest
 ```
 
