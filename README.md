@@ -38,7 +38,7 @@ sudo apt update
 sudo apt install openjdk-11-jdk
 ```
 
-#### 2. Set Up Jenkins Node
+#### 2. Set Up Jenkins Node   
 
 1. Open the Jenkins Dashboard
 
@@ -175,5 +175,5 @@ docker ps
 ```bash
 http://<AGENT_NODE_IP>:5000
 ```
-If the application loads successfully, the deployment is complete.
+If the application loads successfully, the deployment is complete.  
 
