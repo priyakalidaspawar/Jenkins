@@ -45,6 +45,14 @@ sudo apt install openjdk-11-jdk
 2. Navigate to: Manage Jenkins → Nodes → New Node
 3. Add a new node with the required configuration and save it.
 
+<img width="1024" height="266" alt="image" src="https://github.com/user-attachments/assets/3dfe6d46-2e53-42da-9e6f-5344cfa6055c" />
+<img width="1024" height="179" alt="image" src="https://github.com/user-attachments/assets/46c64568-bab1-43a4-84d0-65916dd1af7d" />
+
+<img width="1024" height="483" alt="image" src="https://github.com/user-attachments/assets/f90980e9-6a68-4155-abb1-bed18626876b" />
+
+
+<img width="1024" height="442" alt="image" src="https://github.com/user-attachments/assets/1fdce0bf-b584-4170-98ad-a1bc8bc36147" />
+
 #### 3. Connect the Node to Jenkins
 Run the following commands on the agent node:
 ```bash
