@@ -57,13 +57,7 @@ sudo apt install openjdk-11-jdk
 Run the following commands on the agent node:
 ```bash
 curl -sO http://<JENKINS_URL>/jnlpJars/agent.jar
-```
-
-```bash
-java -jar agent.jar \
--jnlpUrl http://<JENKINS_URL>/computer/<NODE_NAME>/jenkins-agent.jnlp \
--secret <SECRET> \
--workDir "/home/ubuntu/jenkins"
+java -jar agent.jar -jnlpUrl <JENKINS_URL>/computer/<NODE_NAME>/jenkins-agent..jnlp -secret <SECRET> -workDir "/home/ubuntu/jenkins"
 ```
 Replace <JENKINS_URL>, <NODE_NAME>, and <SECRET> with your Jenkins-specific values.
 
