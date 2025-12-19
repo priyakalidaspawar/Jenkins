@@ -64,12 +64,10 @@ Replace <JENKINS_URL>, <NODE_NAME>, and <SECRET> with your Jenkins-specific valu
 ###  Step 2: Create and Configure the Pipeline
 
 1. Open Jenkins Dashboard
-2. Click New Item
-3. Select Pipeline
-4. Enter a name and click OK
-5. In the pipeline configuration:
-- Select Pipeline script
-- Paste the following pipeline code
+2. Create a new pipeline job:
+- Navigate to New Item > Pipeline and name your pipeline.
+- In the pipeline configuration, select the Pipeline script option.
+- Copy and paste the following pipeline script:
 ## Jenkins Declarative Pipeline Script
 
 ```bash
