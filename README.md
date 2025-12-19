@@ -65,9 +65,9 @@ Replace <JENKINS_URL>, <NODE_NAME>, and <SECRET> with your Jenkins-specific valu
 
 1. Open Jenkins Dashboard
 2. Create a new pipeline job:
-- Navigate to New Item > Pipeline and name your pipeline.
-- In the pipeline configuration, select the Pipeline script option.
-- Copy and paste the following pipeline script:
+ - Navigate to New Item > Pipeline and name your pipeline.
+ - In the pipeline configuration, select the Pipeline script option.
+ - Copy and paste the following pipeline script:
 ## Jenkins Declarative Pipeline Script
 
 ```bash
