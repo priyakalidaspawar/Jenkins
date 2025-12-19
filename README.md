@@ -65,9 +65,9 @@ Replace <JENKINS_URL>, <NODE_NAME>, and <SECRET> with your Jenkins-specific valu
 
 1. Open Jenkins Dashboard
 2. Create a new pipeline job:
- - Navigate to New Item > Pipeline and name your pipeline.
- - In the pipeline configuration, select the Pipeline script option.
- - Copy and paste the following pipeline script:
+   - Navigate to New Item > Pipeline and name your pipeline.
+   - In the pipeline configuration, select the Pipeline script option.
+   - Copy and paste the following pipeline script:
 ## Jenkins Declarative Pipeline Script
 
 ```bash
@@ -152,6 +152,10 @@ pipeline {
     }
 }
 ```
+
+
+<img width="1024" height="435" alt="image" src="https://github.com/user-attachments/assets/07d8bf06-0392-492b-8655-1e7d85d1b650" />
+
 ### Step 3: Verify Docker Images and Containers
 
 1. Verify Docker Image
@@ -159,6 +163,9 @@ pipeline {
 ```bash
    docker images
 ```
+
+<img width="1024" height="193" alt="image" src="https://github.com/user-attachments/assets/019b7f6e-1614-4eb3-8506-77d2c178de26" />
+
 Ensure the following image is available: 
 ``` bash
 demo:latest
@@ -168,12 +175,16 @@ demo:latest
 docker ps
 ```
 
+<img width="1024" height="86" alt="image" src="https://github.com/user-attachments/assets/475a6ae4-4caf-4513-acb2-0aace471af88" />
+
+
 ### Step 4: Access the Application
 
 1. Open a web browser
-2. Navigate to:
-```bash
-http://<AGENT_NODE_IP>:5000
-```
+2. Enter ```bash http://<AGENT_NODE_IP>:5000``` to check if the application is deployed successfully
+
+
+<img width="1024" height="566" alt="image" src="https://github.com/user-attachments/assets/830ea994-67f3-4d61-9a2c-d9a1125ed459" />
+
 If the application loads successfully, the deployment is complete.  
 
